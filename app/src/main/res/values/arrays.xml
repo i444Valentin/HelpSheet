@@ -21,11 +21,11 @@
 <!--        <item></item>-->
     </string-array>
 
-    <string-array name="helpSheetTitlesIcons">
-        <item>R.drawable.third_newton_law</item>
-        <item>R.drawable.second_newton_law</item>
-        <item>R.drawable.first_newton_law</item>
-        <item>R.drawable.newton_biography</item>
-        <item>R.drawable.english_for_developers</item>
-    </string-array>
+    <integer-array name="helpSheetTitlesIcons">
+        <item>@drawable/third_newton_law</item>
+        <item>@drawable/second_newton_law</item>
+        <item>@drawable/first_newton_law</item>
+        <item>@drawable/first_newton_law</item>
+        <item>@drawable/first_newton_law</item>
+    </integer-array>
 </resources>

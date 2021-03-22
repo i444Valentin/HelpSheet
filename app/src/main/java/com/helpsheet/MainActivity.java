@@ -3,34 +3,41 @@ package com.helpsheet;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends ListActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
     HelpSheetAdapter HSAdapter;
     String[] helpSheetSings;
     int[] imageIds;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         helpSheetSings = getResources().getStringArray(R.array.helpSheetTitles);
-        imageIds = getResources().getIntArray(R.array.helpSheetTitlesIcons);
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.helpSheetTitlesIcons);
+        imageIds = new int[typedArray.length()];
+        for (int i =0; i<imageIds.length;i++){
+            imageIds[i] = typedArray.getResourceId(i,0);
+        }
+        typedArray.recycle();
 
         HSAdapter = new HelpSheetAdapter(this);
-        setListAdapter(HSAdapter);
+
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(HSAdapter);
 
     }
-
-
-
-
-
 
 
     public class HelpSheetAdapter extends BaseAdapter {
