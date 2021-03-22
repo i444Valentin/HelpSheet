@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="helpSheetTitles">
+        <item>Третий закон Ньютона</item>
+        <item>Второй закон Ньютона</item>
+        <item>Первый закон Ньютона</item>
+        <item>Ньютон и его биография</item>
+        <item>Зачем разработчику знать английский</item>
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+    </string-array>
+
+    <string-array name="helpSheetTitlesIcons">
+        <item>R.drawable.third_newton_law</item>
+        <item>R.drawable.second_newton_law</item>
+        <item>R.drawable.first_newton_law</item>
+        <item>R.drawable.newton_biography</item>
+        <item>R.drawable.english_for_developers</item>
+    </string-array>
+</resources>
