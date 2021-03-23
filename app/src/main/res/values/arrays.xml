@@ -4,28 +4,20 @@
         <item>Третий закон Ньютона</item>
         <item>Второй закон Ньютона</item>
         <item>Первый закон Ньютона</item>
-        <item>Ньютон и его биография</item>
-        <item>Зачем разработчику знать английский</item>
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
-<!--        <item></item>-->
+        <item>Закон Ома</item>
+        <item>Закон Джоуля-Ленца</item>
+        <item>Закон всемирного тяготения</item>
+        <item>Закон Архимеда</item>
+
     </string-array>
 
     <integer-array name="helpSheetTitlesIcons">
         <item>@drawable/third_newton_law</item>
         <item>@drawable/second_newton_law</item>
         <item>@drawable/first_newton_law</item>
-        <item>@drawable/isaac_newton_biography</item>
-        <item>@drawable/first_newton_law</item>
+        <item>@drawable/ohms_law</item>
+        <item>@drawable/joule_lenz_law</item>
+        <item>@drawable/universal_gravity_law</item>
+        <item>@drawable/archimede_law</item>
     </integer-array>
 </resources>

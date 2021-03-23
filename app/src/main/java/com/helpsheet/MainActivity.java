@@ -1,7 +1,5 @@
 package com.helpsheet;
 
-
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -25,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         helpSheetSings = getResources().getStringArray(R.array.helpSheetTitles);
+
         TypedArray typedArray = getResources().obtainTypedArray(R.array.helpSheetTitlesIcons);
         imageIds = new int[typedArray.length()];
         for (int i =0; i<imageIds.length;i++){
