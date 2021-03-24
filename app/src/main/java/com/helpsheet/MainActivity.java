@@ -3,9 +3,7 @@ package com.helpsheet;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.view.KeyboardShortcutGroup;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -74,15 +72,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null)
+            ViewHolder holder;
+            if (convertView == null){
                 convertView = mLayoutInflater.inflate(R.layout.list_item, parent,false);
+                holder = new ViewHolder();
+                holder.iconImageView = (ImageView) convertView.findViewById(R.id.imageViewIcon);
+                holder.titleTextView = (TextView) convertView.findViewById(R.id.textViewSign);
+                convertView.setTag(holder);
+            }else holder = (ViewHolder) convertView.getTag();
 
-            ImageView image = (ImageView) convertView.findViewById(R.id.imageViewIcon);
-            image.setImageResource(imageIds[position]);
-
-            TextView signTextView = (TextView) convertView.findViewById(R.id.textViewSign);
-            signTextView.setText(helpSheetSings[position]);
-
+            holder.titleTextView.setText(helpSheetSings[position]);
+            holder.iconImageView.setImageResource(imageIds[position]);
             return convertView;
         }
     }
