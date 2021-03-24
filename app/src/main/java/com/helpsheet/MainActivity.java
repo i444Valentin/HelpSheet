@@ -3,17 +3,21 @@ package com.helpsheet;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.KeyboardShortcutGroup;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     HelpSheetAdapter HSAdapter;
     String[] helpSheetSings;
     int[] imageIds;
@@ -35,9 +39,15 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(HSAdapter);
+        listView.setOnItemClickListener(this);
 
     }
 
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this, HSAdapter.getItem(position).toString(),Toast.LENGTH_SHORT).show();
+    }
 
     public class HelpSheetAdapter extends BaseAdapter {
         private final LayoutInflater mLayoutInflater;
