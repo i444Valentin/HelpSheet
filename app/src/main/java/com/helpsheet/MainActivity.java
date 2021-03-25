@@ -17,8 +17,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,StringKeys {
-    HelpSheetAdapter HSAdapter;
-    String[] helpSheetSings;
+    HelpSheetAdapter HSAdapter; //адаптер для списка
+    String[] helpSheetSings; //заголоки тем для шпаргалки
     String[] sheets;
     ListView sheetsListView;
     int[] imageIds;
@@ -50,16 +50,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this,SheetActivity.class);
         intent.putExtra(SHEET,sheets[position]);
-        Toast.makeText(this, HSAdapter.getItem(position).toString(),Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        sheetsListView.setOnItemClickListener(null);
+        sheetsListView.setOnItemClickListener(null); //закрываем слушатель при закрытий приложения
     }
 
+    /**
+     * Класс, реализующий свой адаптер для ListView
+     *
+     * Основывается на классе BaseAdapter
+     * переопределяет его методы
+     *
+     * Примечание - BaseAdapter наследуется на ListAdapter, который также имплементирует методы Adapter
+     */
     public class HelpSheetAdapter extends BaseAdapter {
         private final LayoutInflater mLayoutInflater;
 
@@ -82,6 +89,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             return position;
         }
 
+        /**
+         * Возвращает вид для элемента списка, заполняя его значениями
+         * @param position - текущая позиция в списке
+         * @param convertView - конвертируемый вид
+         * @param parent - родитель
+         * @return - заполненный вид
+         */
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder;
