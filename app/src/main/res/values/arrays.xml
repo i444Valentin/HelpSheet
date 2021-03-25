@@ -18,6 +18,16 @@
         <item>@drawable/ohms_law</item>
         <item>@drawable/joule_lenz_law</item>
         <item>@drawable/universal_gravity_law</item>
-        <item>@drawable/archimede_law</item>
+        <item>@drawable/archimedes_law</item>
     </integer-array>
+
+    <string-array name="files">
+        <item>third_newton_law</item>
+        <item>second_newton_law</item>
+        <item>first_newton_law</item>
+        <item>ohms_law</item>
+        <item>joule_lenz_law</item>
+        <item>universal_gravity_law</item>
+        <item>archimedes_law</item>
+    </string-array>
 </resources>
