@@ -24,6 +24,7 @@ public class SheetActivity extends AppCompatActivity implements StringKeys {
         }
     }
 
+
     private void showSheet(String sheet) {
         try{
             sheetView.loadUrl(SHEETS_DIRECTORY + sheet);

@@ -32,7 +32,7 @@
             android:name=".SheetActivity"
             android:label="HelpSheet"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            android:theme="@style/Theme.AppCompat">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
