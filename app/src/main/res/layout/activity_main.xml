@@ -6,7 +6,7 @@
     tools:context=".MainActivity">
 
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/sheetsListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>

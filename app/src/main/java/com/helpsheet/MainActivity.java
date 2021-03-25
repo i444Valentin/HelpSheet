@@ -1,6 +1,7 @@
 package com.helpsheet;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,9 +16,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,StringKeys {
     HelpSheetAdapter HSAdapter;
     String[] helpSheetSings;
+    String[] sheets;
+    ListView sheetsListView;
     int[] imageIds;
 
     @Override
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         helpSheetSings = getResources().getStringArray(R.array.helpSheetTitles);
+        sheets = getResources().getStringArray(R.array.files);
 
         TypedArray typedArray = getResources().obtainTypedArray(R.array.helpSheetTitlesIcons);
         imageIds = new int[typedArray.length()];
@@ -35,16 +39,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         HSAdapter = new HelpSheetAdapter(this);
 
-        ListView listView = findViewById(R.id.list);
-        listView.setAdapter(HSAdapter);
-        listView.setOnItemClickListener(this);
+        sheetsListView = findViewById(R.id.sheetsListView);
+        sheetsListView.setAdapter(HSAdapter);
+        sheetsListView.setOnItemClickListener(this);
 
     }
 
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this,SheetActivity.class);
+        intent.putExtra(SHEET,sheets[position]);
         Toast.makeText(this, HSAdapter.getItem(position).toString(),Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sheetsListView.setOnItemClickListener(null);
     }
 
     public class HelpSheetAdapter extends BaseAdapter {
@@ -53,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         HelpSheetAdapter (Context context){
             mLayoutInflater = LayoutInflater.from(context);
         }
-
 
         @Override
         public int getCount() {
