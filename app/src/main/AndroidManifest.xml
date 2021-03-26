@@ -19,7 +19,8 @@
         </intent-filter>
     </activity>
 
-        <activity android:name="com.helpsheet.MainActivity">
+        <activity android:name="com.helpsheet.MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,7 @@
             android:name=".SheetActivity"
             android:label="HelpSheet"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

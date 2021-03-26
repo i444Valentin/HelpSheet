@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="file:///android_asset/sheets/page_style.css"/>
+    </head>
+    <body>
+        <div class="news-detail">
+            <p><strong>Класси́ческая тео́рия тяготе́ния Ньюто́на 
+                (Зако́н всео́бщего тяготе́ния Ньюто́на)</strong> — закон, 
+                описывающий гравитационное взаимодействие в рамках классической механики. 
+                Этот закон был открыт Ньютоном в 1666 году. Он гласит, что сила 
+                гравитационного притяжения между двумя материальными точками массы 
+                <img alt="m_1" 
+                src="images/universal_gravity_law/b76530f37a5cbc3d17ebe8df6fed402f.png"> 
+                и <img alt="m_2" 
+                src="images/universal_gravity_law/bdd1c7307b88ad20fe151890256e325a.png">, 
+                разделёнными расстоянием <img alt="R" 
+                src="images/universal_gravity_law/e1e1d3d40573127e9ee0480caf1283d6.png">, 
+                пропорциональна обеим массам и обратно пропорциональна квадрату 
+                расстояния между ними&nbsp;— то есть:</p>
+<center>
+<img alt="F = G \cdot {m_1 \cdot m_2\over R^2}" 
+src="images/universal_gravity_law/332e47403d4f6915f3c778aa383f9d2f.png">
+</center>
+<p>Здесь <img alt="G" 
+    src="images/universal_gravity_law/dfcf28d0734569a6a693bc8194de62bf.png">&nbsp;— 
+    гравитационная постоянная, равная <img alt=" 6{,}67384(80) \cdot 10^{-11}" 
+    src="images/universal_gravity_law/c2a5d85fa1e038b91c1ccd6dd3d2d920.png"> 
+    м³/(кг с²).</p>
+<h2>Свойства ньютоновского тяготения</h2>
+        <div class="word-law">
+            <ul>
+            <li>В ньютоновской теории каждое массивное тело порождает силовое поле притяжения к этому 
+                телу, которое называется гравитационным полем. 
+                Это поле потенциально, и функция гравитационного потенциала для материальной точки 
+                с массой <img alt="M" 
+                src="images/universal_gravity_law/69691c7bdcc3ce6d5d8a1361f22d04ac.png"> 
+                определяется формулой:</li>
+            </ul>
+            <dl>
+            <dd><img alt=" \varphi(r) = -G \frac{M}{r}" src="images/universal_gravity_law/0e5c085de9abd358f8107dc05da0432d.png"></dd>
+            <dd>В общем случае, когда плотность вещества ρ 
+                распределена произвольно, φ удовлетворяет уравнению Пуассона:</dd>
+            <dd><img alt="\Delta \varphi = -4 \pi G \rho, " 
+                src="images/universal_gravity_law/b1c26a05a5cb7f3159028e7c93d949a8.png"></dd>
+            <dd>Решение этого уравнения записывается в виде:</dd>
+            <dd><img alt="\varphi = -G \int {\frac {\rho dV}{r}} + C, " 
+                src="images/universal_gravity_law/40d92c673f64c446b12ab47b4b13fac3.png"></dd>
+            <dd>где <em>r</em> — расстояние между элементом объёма <em>dV</em> 
+                и точкой, в которой определяется потенциал φ, <em>С</em> — 
+                произвольная постоянная.</dd>
+            </dl>
+            <ul>
+            <li>Сила притяжения, действующая в гравитационном поле на материальную точку 
+                с массой <img alt="m" 
+                src="images/universal_gravity_law/6f8f57715090da2632453988d9a1501b.png">, 
+                связана с потенциалом формулой:</li>
+            </ul>
+            <dl>
+            <dd><img alt="F(r) = - m \nabla \varphi(r) " 
+                src="images/universal_gravity_law/019d640981b8c99fe892ff8b9700b520.png"></dd>
+            </dl>
+            <ul>
+            <li>Сферически симметричное тело создаёт за своими пределами такое же   
+                поле, как материальная точка той же массы, расположенная в центре тела.</li>
+            <li>Траектория материальной точки в гравитационном поле, создаваемом 
+                много большей по массе материальной точкой, подчиняется законам Кеплера. 
+                В частности, планеты и кометы в Солнечной системе движутся по 
+                эллипсам или гиперболам. Влияние других планет, искажающее эту 
+                картину, можно учесть с помощью теории возмущений.</li>
+            </ul>
+        </div>
+        <div>
+            <img alt="" src="images/universal_gravity_law/220px-NewtonsLawOfUniversalGravitation.svg.png" height="154" width="220">
+        </div>
+    </body>
+</html>
