@@ -21,7 +21,7 @@ public class SheetActivity extends AppCompatActivity implements StringKeys {
 
 
         Intent intent = getIntent();
-        String title = intent.getStringExtra("title");
+        String title = intent.getStringExtra(TITLE);
         Toolbar toolbar = findViewById(R.id.toolbarSheet);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

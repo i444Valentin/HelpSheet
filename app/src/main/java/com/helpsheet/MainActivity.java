@@ -12,28 +12,27 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,StringKeys {
     HelpSheetAdapter HSAdapter; //адаптер для списка
-    String[] helpSheetSings; //заголоки тем для шпаргалки
+    String[] sheetTitles; //заголоки тем для шпаргалки
     String[] sheets;
     ListView sheetsListView;
-    int[] imageIds;
+    int[] sheetIconIds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        helpSheetSings = getResources().getStringArray(R.array.helpSheetTitles);
+        sheetTitles = getResources().getStringArray(R.array.helpSheetTitles);
         sheets = getResources().getStringArray(R.array.files);
 
         TypedArray typedArray = getResources().obtainTypedArray(R.array.helpSheetTitlesIcons);
-        imageIds = new int[typedArray.length()];
-        for (int i =0; i<imageIds.length;i++){
-            imageIds[i] = typedArray.getResourceId(i,0);
+        sheetIconIds = new int[typedArray.length()];
+        for (int i = 0; i< sheetIconIds.length; i++){
+            sheetIconIds[i] = typedArray.getResourceId(i,0);
         }
         typedArray.recycle();
 
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this,SheetActivity.class);
         intent.putExtra(SHEET,sheets[position]);
-        intent.putExtra("title",helpSheetSings[position]);
+        intent.putExtra(TITLE, sheetTitles[position]);
         startActivity(intent);
     }
 
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         @Override
         public int getCount() {
-            return helpSheetSings.length;
+            return sheetTitles.length;
         }
 
         @Override
@@ -92,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         /**
          * Возвращает вид для элемента списка, заполняя его значениями
+         *
          * @param position - текущая позиция в списке
          * @param convertView - конвертируемый вид
          * @param parent - родитель
@@ -108,8 +108,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 convertView.setTag(holder);
             }else holder = (ViewHolder) convertView.getTag();
 
-            holder.titleTextView.setText(helpSheetSings[position]);
-            holder.iconImageView.setImageResource(imageIds[position]);
+            holder.titleTextView.setText(sheetTitles[position]);
+            holder.iconImageView.setImageResource(sheetIconIds[position]);
             return convertView;
         }
     }
