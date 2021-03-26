@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 
+import androidx.appcompat.widget.Toolbar;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +19,13 @@ public class SheetActivity extends AppCompatActivity implements StringKeys {
         sheetView = findViewById(R.id.sheetWebView);
         sheetView.setHorizontalScrollBarEnabled(false);
 
+
         Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        Toolbar toolbar = findViewById(R.id.toolbarSheet);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle(title);
         if (intent != null){
             String sheet = intent.getStringExtra(SHEET);
             showSheet(sheet);

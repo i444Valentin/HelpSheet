@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this,SheetActivity.class);
         intent.putExtra(SHEET,sheets[position]);
+        intent.putExtra("title",helpSheetSings[position]);
         startActivity(intent);
     }
 
